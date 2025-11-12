@@ -1,0 +1,141 @@
+{%extends 'users/user_base.html'%}
+{%load static%}
+{%block contents%}
+<style>
+table {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+table td, table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+table tr:nth-child(even){background-color: #f2f2f2;}
+table tr:nth-child(odd){background-color: #f2f2f2;}
+
+
+table tr:hover {background-color: #ddd;}
+
+table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+}
+</style>
+<section id="pricing">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title wow fadeInDown">Analysis of Machine Learning Based Credit Card Transaction and its Applications</h2>
+            <p class="wow fadeInDown">Machine Learning Based Credit Card Transaction</p>
+        </div>
+<h2>Prediction form of Transactions</h2>
+        <p>
+        <form action="{%url 'testPredictions'%}" method="post">
+            {%csrf_token%}
+            <table border="1" class="dataframe">
+                <thead>
+                <tr style="text-align: right;">
+                    <th>Lable</th>
+                    <th>Input</th>
+
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>amount</td>
+                    <td><input type="number" min="0" max="100000000" step="0.1" name="amount" required>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>Account_total_balance</td>
+                    <td><input type="number" min="0" max="1000000000" step="0.1" name="sender_old_balance" required>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>Transaction_balance</td>
+                    <td><input type="number" min="0" max="1500000" step="0.1" name="sender_new_balance" required>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>receiver_old_balance</td>
+                    <td><input type="number" min="50" max="1500000" step="0.1" name="receiver_old_balance" required>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>receiver_new_balance</td>
+                    <td><input type="number" min="0" max="1500000" step="0.1" name="receiver_new_balance" required>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>Transactions_types</td>
+                    <td><select name="type_CASH_OUT" required>
+                        <option value="">---Select Cash Out---</option>
+                         <option value="1"> revolving credit</option>
+                         <option value="0"> installment</option>
+                    </select>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>credit_card  </td>
+                    <td><select name="type_DEBIT" required>
+                        <option value="">---Select Debit Out---</option>
+                         <option value="1">yes</option>
+                         <option value="0">no</option>
+                    </select>
+                    </td>
+
+                </tr>
+                 <tr>
+                    <td>type of pyment</td>
+                    <td><select name="type_PAYMENT" required>
+                        <option value="">---Select Type of Payment---</option>
+                         <option value="1">Personal_loan</option>
+                         <option value="0">creditcard_loan</option>
+                    </select>
+                    </td>
+
+                </tr>
+                 <tr>
+                    <td>type of transfers</td>
+                    <td><select name="type_TRANSFER" required>
+                        <option value="">---Select Type of Transfer---</option>
+                         <option value="1">Bank transfers</option>
+                         <option value="0">NetBanking&Credit card</option>
+                    </select>
+                    </td>
+
+                </tr>
+                  <tr>
+                    <td>Debitcard_transaction</td>
+                    <td><select name="type2_CM" required>
+                        <option value="">---Select CM Type---</option>
+                         <option value="1">yes</option>
+                         <option value="0">no</option>
+                    </select>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td><h3>Result: {{pred}}</h3></td>
+                    <td><input type="submit" value="submit"></td>
+
+                </tr>
+                </tbody>
+            </table>
+        </form>
+        </p>
+    </div>
+</section><!--/#pricing-->
+
+{%endblock%}

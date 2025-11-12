@@ -1,0 +1,79 @@
+{%extends 'users/user_base.html'%}
+{%block contents%}
+<style>
+table {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+table td, table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+table tr:nth-child(even){background-color: #f2f2f2;}
+table tr:nth-child(odd){background-color: #f2f2f2;}
+
+
+table tr:hover {background-color: #ddd;}
+
+table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+}
+</style>
+<section id="pricing">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title wow fadeInDown">Analysis of Machine Learning Based Credit Card Transaction and its Applications</h2>
+            <p class="wow fadeInDown">Machine Learning Based Credit Card Transaction</p>
+        </div>
+
+        <p>
+        <center>
+        <h2 style="color: White;"> PaySim Dataset view</h2>
+            {{data|safe}}
+        </center>
+        </p>
+
+        <p>
+        <h2 style="color: White;"> Headers</h2>
+        <span style="color: White;">This is a sample of 1 row with headers explanation:</span>
+        <ul style="color: White;">
+            <li>1,PAYMENT,1060.31,C429214117,1089.0,28.69,M1591654462,0.0,0.0,0,0</li>
+            <li>step - maps a unit of time in the real world. In this case 1 step is 1 hour of time. Total steps 744 (30
+                days simulation).
+            </li>
+            <li>type - CASH-IN, CASH-OUT, DEBIT, PAYMENT and TRANSFER.</li>
+            <li>amount - amount of the transaction in local currency.</li>
+            <li>nameOrig - customer who started the transaction</li>
+            <li>oldbalanceOrg - initial balance before the transaction</li>
+            <li>newbalanceOrig - new balance after the transaction</li>
+            <li>nameDest - customer who is the recipient of the transaction</li>
+            <li>oldbalanceDest - initial balance recipient before the transaction. Note that there is not information
+                for customers that start with M (Merchants).
+            </li>
+            <li>newbalanceDest - new balance recipient after the transaction. Note that there is not information for
+                customers that start with M (Merchants).
+            </li>
+            <li>isFraud - This is the transactions made by the fraudulent agents inside the simulation. In this specific
+                dataset the fraudulent behavior of the agents aims to profit by taking control or customers accounts and
+                try to empty the funds by transferring to another account and then cashing out of the system.
+            </li>
+            <li>isFlaggedFraud - The business model aims to control massive transfers from one account to another and
+                flags illegal attempts. An illegal attempt in this dataset is an attempt to transfer more than 200.000
+                in a single transaction.
+            </li>
+
+
+        </ul>
+
+        </p>
+    </div>
+</section><!--/#pricing-->
+
+{%endblock%}

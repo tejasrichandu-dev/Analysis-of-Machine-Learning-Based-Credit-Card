@@ -1,0 +1,70 @@
+{%extends 'users/user_base.html'%}
+{%block contents%}
+<section id="pricing">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title wow fadeInDown">Analysis of Machine Learning Based Credit Card Transaction and its Applications</h2>
+            <p class="wow fadeInDown">Machine Learning Based Credit Card Transaction</p>
+        </div>
+
+        {% comment %} <p>
+            The “Paysim” dataset from Kaggle, a well known online community has been used for analysis and detection of
+            frauds. This is a synthetic dataset of Online payment transactions consisting of nearly 6.4 million rows of
+            data. The entire 6.4 million rows data has been segregated into five majorly identified transaction types :
+            CASH-IN, CASHOUT, DEBIT, PAYMENT and TRANSFER. The task was to find out the types in which frauds mainly
+            occur. The transactions are classfied as “fraudulent” and “genuine” using binary classification analysis.
+            The overall flow of this module can be visualized in Fig. 1. The dataset was found to be quite skewed, thus
+            for proper analysis data pre-processing is done.
+        </p>
+        <p>
+            There is a lack of public available datasets on financial services and specially in the emerging mobile
+            money transactions domain. Financial datasets are important to many researchers and in particular to us
+            performing research in the domain of fraud detection. Part of the problem is the intrinsically private
+            nature of financial transactions, that leads to no publicly available datasets.
+
+            We present a synthetic dataset generated using the simulator called PaySim as an approach to such a problem.
+            PaySim uses aggregated data from the private dataset to generate a synthetic dataset that resembles the
+            normal operation of transactions and injects malicious behaviour to later evaluate the performance of fraud
+            detection methods.
+        </p>
+        <p style="color: White;">
+        <h3 style="color: White;">Description</h3>
+        <span style="color: White;"> PaySim simulates mobile money transactions based on a sample of real transactions extracted from one month of financial logs from a mobile money service implemented in an African country. The original logs were provided by a multinational company, who is the provider of the mobile financial service which is currently running in more than 14 countries all around the world.</span>
+        </p>
+        <p>
+        <h2 style="color: White;"> Headers</h2>
+        <span style="color: White;">This is a sample of 1 row with headers explanation:</span>
+        <ul style="color: White;">
+            <li>1,PAYMENT,1060.31,C429214117,1089.0,28.69,M1591654462,0.0,0.0,0,0</li>
+            <li>step - maps a unit of time in the real world. In this case 1 step is 1 hour of time. Total steps 744 (30
+                days simulation).
+            </li>
+            <li>type - CASH-IN, CASH-OUT, DEBIT, PAYMENT and TRANSFER.</li>
+            <li>amount - amount of the transaction in local currency.</li>
+            <li>nameOrig - customer who started the transaction</li>
+            <li>oldbalanceOrg - initial balance before the transaction</li>
+            <li>newbalanceOrig - new balance after the transaction</li>
+            <li>nameDest - customer who is the recipient of the transaction</li>
+            <li>oldbalanceDest - initial balance recipient before the transaction. Note that there is not information
+                for customers that start with M (Merchants).
+            </li>
+            <li>newbalanceDest - new balance recipient after the transaction. Note that there is not information for
+                customers that start with M (Merchants).
+            </li>
+            <li>isFraud - This is the transactions made by the fraudulent agents inside the simulation. In this specific
+                dataset the fraudulent behavior of the agents aims to profit by taking control or customers accounts and
+                try to empty the funds by transferring to another account and then cashing out of the system.
+            </li>
+            <li>isFlaggedFraud - The business model aims to control massive transfers from one account to another and
+                flags illegal attempts. An illegal attempt in this dataset is an attempt to transfer more than 200.000
+                in a single transaction.
+            </li>
+
+
+        </ul>
+
+        </p> {% endcomment %}
+    </div>
+</section><!--/#pricing-->
+
+{%endblock%}
